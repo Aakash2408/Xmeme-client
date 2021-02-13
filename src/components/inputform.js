@@ -41,31 +41,31 @@ const validate = values => {
       };
       // console.log(requestOptions)
       // console.log(process.env.REACT_APP_CUSTOM_ENV_VAR)
-      fetch(`${URL}/memes?name=${values.name}&caption=${values.caption}&url=${values.url}`, requestOptions)
-          .then(response => response.json())
-          .then((data)=>{
-            // console.log(data)
-            if(!data.id){
-              M.toast({html : data.message, classes: "red darken-1"})
-            }else{
-              M.toast({html : "Meme Created Successfully" , classes : "green darken-1"})
-              fetch(`${URL}/memes`)
-              .then(response => response.json())
-              .then((data)=>{
-                dispatch({type:'SET', payload: data})
-              })
-            }
-          });
+//       fetch(`${URL}/memes?name=${values.name}&caption=${values.caption}&url=${values.url}`, requestOptions)
+//           .then(response => response.json())
+//           .then((data)=>{
+//             // console.log(data)
+//             if(!data.id){
+//               M.toast({html : data.message, classes: "red darken-1"})
+//             }else{
+//               M.toast({html : "Meme Created Successfully" , classes : "green darken-1"})
+//               fetch(`${URL}/memes`)
+//               .then(response => response.json())
+//               .then((data)=>{
+//                 dispatch({type:'SET', payload: data})
+//               })
+//             }
+//           });
       },
     });
-    const [memesData, setMeme] = useState([])
-    const[isChildLoading, setChildLoading] = useState(true)
-    useEffect(async ()=>{
-      // console.log(URL)
-      let memes = await axios.get(`${URL}/memes`)
-      dispatch({type: 'SET', payload : memes.data})
-      // setChildLoading(false)
-    },[])
+//     const [memesData, setMeme] = useState([])
+//     const[isChildLoading, setChildLoading] = useState(true)
+//     useEffect(async ()=>{
+//       // console.log(URL)
+//       let memes = await axios.get(`${URL}/memes`)
+//       dispatch({type: 'SET', payload : memes.data})
+//       // setChildLoading(false)
+//     },[])
     return (
       <div>
         <div className="form">
