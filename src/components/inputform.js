@@ -5,7 +5,7 @@ import M from 'materialize-css'
 import ListMemes from './memeslist'
 import {UserContext} from '../App'
 // const URL = process.env.NODE_ENV=='production' ? require('../urls').production : require('../urls').lcoal
-const URL="http://localhost:8080"
+const URL="https://xmeme-cwod-backend.herokuapp.com"
 const validate = values => {
     const errors = {};
     if (!values.name) {
